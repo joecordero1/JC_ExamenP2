@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+    
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JC_ExamenP2.MainPage">
@@ -20,29 +21,15 @@
                     </Picker.ItemsSource>
             </Picker>
 
-            <StackLayout>
+            <StackLayout x:Name="miStackLayout">
                 <Label Text="Valor de la recarga:" />
-                <RadioButton Content="3" />
-                <RadioButton Content="5" />
-                <RadioButton Content="10"
-                 IsChecked="true" />
+                <Label Text="{Binding radioButton1.Content}" />
+                <Label Text="{Binding radioButton3.Content}" />
+                <Label Text="{Binding radioButton1.Content}" />
             </StackLayout>
 
-            <Label Text="Tip"   />
-            <Label x:Name="tipOutput" Text="0.00" />
-
-            <Label Text="Total" />
-            <Label x:Name="totalOutput" Text="0.00" />
-
-            <Label Text="Tip Percentage" />
-            <Label x:Name="tipPercent" Text="15%" />
-            <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15" />
-
-            <Button Text="15%" Clicked="OnNormalTip" />
-            <Button Text="20%" Clicked="OnGenerousTip" />
-
-            <Button x:Name="roundDown" Text="Round Down" />
-            <Button x:Name="roundUp"   Text="Round Up" />
+            <Label Text="{Binding ContenidoSeleccionado, StringFormat='El valor seleccionado es: {0}'}" />
+            <Button x:Name="btnConfirmar"   Text="Confirmar" />
 
         </VerticalStackLayout>
     </ScrollView>
